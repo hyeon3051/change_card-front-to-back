@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .wrapper {
+        width: 100vw;
+        height: 200vh;
+      }
+      div[class^="class"] {
+        width: 300px;
+        height: 200px;
+        display: Flex;
+        border: 2px solid black;
+        justify-content: center;
+        align-items: center;
+        background-color: #84a9ac;
+        font-size: 4rem;
+        color: white;
+        font-family: Noto Sans Korean;
+        transition: all 0.5s ease-in;
+      }
+      div[class^="class"]:nth-child(2n) {
+        background-color: #ade498;
+      }
+      .class1-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+      }
+      .class1:hover {
+        transform: rotateY(180deg);
+        backface-visibility: hidden;
+      }
+      .class1:hover ~ .class1-wrapper {
+        transform: rotateY(0deg);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="class1">1</div>
+      <div class="class2">2</div>
+      <div class="class3">3</div>
+      <div class="class4">4</div>
+      <div class="class5">5</div>
+      <div class="class1-wrapper">7</div>
+    </div>
+  </body>
+</html>
